@@ -13,10 +13,6 @@ spec:
     path: dev
     helm:
       parameters:
-        - name: repoName
-          value: spring
-        - name: imageVersion
-          value: 1.0.0
         - name: deliveryVersion
           value: master
       valueFiles:
