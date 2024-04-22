@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/cogitosun/spring-delivery.git
     targetRevision: master
-    path: dev
+    path: .
     helm:
       parameters:
         - name: deliveryVersion
