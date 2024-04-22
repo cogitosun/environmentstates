@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: spring-delivery
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  namespace: default
+spec:
+  project: spring
+  source:
+    repoURL: https://github.com/cogitosun/spring-delivery.git
+    targetRevision: master
+    path: dev
+    helm:
+      parameters:
+        - name: repoName
+          value: spring
+        - name: imageVersion
+          value: 1.0.0
+        - name: deliveryVersion
+          value: master
+      valueFiles:
+        - values/dev.yaml
+  destination:
+    namespace: default
+    name: in-cluster
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: false
