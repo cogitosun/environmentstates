@@ -4,7 +4,7 @@ metadata:
   name: spring-delivery
   finalizers:
     - resources-finalizer.argocd.argoproj.io
-  namespace: default
+  namespace: daniel
 spec:
   project: spring
   source:
@@ -22,7 +22,7 @@ spec:
       valueFiles:
         - values/dev.yaml
   destination:
-    namespace: default
+    namespace: daniel
     name: in-cluster
   syncPolicy:
     automated:
