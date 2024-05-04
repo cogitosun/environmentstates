@@ -10,7 +10,7 @@ spec:
     source:
         repoURL: https://github.com/cogitosun/argocd.git
         targetRevision: master
-        path: .
+        path: ./
         helm:
           parameters:
             - name: repoName
