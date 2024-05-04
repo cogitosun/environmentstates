@@ -9,8 +9,8 @@ spec:
     project: guestbook
     source:
         repoURL: https://github.com/cogitosun/argocd.git
-        targetRevision: HEAD
-        path: dev
+        targetRevision: master
+        path: .
         helm:
           parameters:
             - name: repoName
